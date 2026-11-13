@@ -1,0 +1,41 @@
+# Dependencies and production output
+node_modules/
+dist/
+dist-ssr/
+
+# Build tools, tests and Python asset scripts
+.vite/
+.cache/
+coverage/
+*.tsbuildinfo
+__pycache__/
+*.py[cod]
+
+# Local environment files (keep example templates)
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.local
+
+# Logs, release archives and generated screenshots
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.zip
+/preview-*.png
+
+# Editor, hosting and OS local state
+.vscode/
+.idea/
+.vercel/
+.netlify/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+
+# Keep package-lock.json, source code, public assets and exported JSON tracked.
