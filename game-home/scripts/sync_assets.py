@@ -32,3 +32,5 @@ for path in sorted(references):
 for name,value in [('catalog',catalog),('skills',skills),('replay',replay)]:
     (public/f'{name}.json').write_text(json.dumps(value,ensure_ascii=False,separators=(',',':')),'utf-8')
 print(f'Imported {len(catalog["items"])} resources, {len(skills["skills"])} skills and {len(references)} files; no withdrawn trails.')
+from sync_aura import sync_aura
+sync_aura(root)

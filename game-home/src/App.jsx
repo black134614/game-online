@@ -1,7 +1,9 @@
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { assetUrl, normalize } from "./assets.js";
+import AuraSection from "./AuraSection.jsx";
 
 const SkillDemo = lazy(() => import("./SkillDemo.jsx"));
+const AuraDemo = lazy(() => import("./AuraDemo.jsx"));
 const TYPES = ["Tất cả", "Quái", "Nhân vật", "NPC", "Trang bị", "Kỹ năng"];
 const PAGE_SIZE = 12;
 const ROMAN = ["Ⅰ", "Ⅱ", "Ⅲ", "Ⅳ", "Ⅴ", "Ⅵ", "Ⅶ", "Ⅷ"];
@@ -21,7 +23,7 @@ function Brand() {
   );
 }
 
-function Modal({ children, onClose, wide = false }) {
+function Modal({ children, onClose, wide = false, label }) {
   const ref = useRef(null);
   useEffect(() => {
     const previouslyFocused = document.activeElement;
@@ -49,7 +51,7 @@ function Modal({ children, onClose, wide = false }) {
         )
           onClose();
       }}
-      aria-label={wide ? "Kỹ năng trên quái" : "Chi tiết tài nguyên"}
+      aria-label={label || (wide ? "Kỹ năng trên quái" : "Chi tiết tài nguyên")}
     >
       <button
         className="close-dialog"
@@ -211,13 +213,11 @@ function Library({ items, open }) {
   const pages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
   const move = (delta) => {
     setPage((value) => value + delta);
-    document
-      .getElementById("library")
-      ?.scrollIntoView({
-        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "instant"
-          : "smooth",
-      });
+    document.getElementById("library")?.scrollIntoView({
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
+    });
   };
   return (
     <section className="wrap library-section" id="library">
@@ -376,6 +376,7 @@ export default function App() {
           <a href="#classes">Môn phái</a>
           <a href="#library">Tài nguyên</a>
           <a href="#skills">Kỹ năng</a>
+          <a href="#auras">Hào quang</a>
         </nav>
         <a className="nav-cta" href="#library">
           Khám phá <span>↗</span>
@@ -515,6 +516,7 @@ export default function App() {
             </div>
           </div>
         </section>
+        <AuraSection onOpen={(preset) => setModal({ kind: "aura", preset })} />
         <section className="closing wrap">
           <p className="eyebrow">HÀNH TRÌNH ĐANG ĐƯỢC VIẾT TIẾP</p>
           <h2>
@@ -539,8 +541,9 @@ export default function App() {
       </footer>
       {modal && (
         <Modal
-          key={modal.kind === "asset" ? modal.item.key : "skill"}
-          wide={modal.kind === "skill"}
+          key={modal.kind === "asset" ? modal.item.key : modal.kind}
+          wide={modal.kind !== "asset"}
+          label={modal.kind === "aura" ? "Phòng thử hào quang" : undefined}
           onClose={() => setModal(null)}
         >
           {modal.kind === "asset" ? (
@@ -551,7 +554,11 @@ export default function App() {
                 <p className="demo-loading">Đang mở sân diễn kỹ năng…</p>
               }
             >
-              <SkillDemo initialId={modal.id} />
+              {modal.kind === "aura" ? (
+                <AuraDemo initialPreset={modal.preset} />
+              ) : (
+                <SkillDemo initialId={modal.id} />
+              )}
             </Suspense>
           )}
         </Modal>

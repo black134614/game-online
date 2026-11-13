@@ -2,6 +2,8 @@
 
 React 19 + Vite 8, dùng JavaScript/JSX. Trang chủ, bộ chọn phái, thư viện tài nguyên, cửa sổ chi tiết và giao diện demo kỹ năng đều là component React; Canvas vẽ cảnh skill trực tiếp trong ứng dụng, không nhúng trang HTML cũ qua iframe.
 
+Mục **Hào quang** có ba mẫu Linh Tức, Linh Hoàn, Linh Trận và phòng phối hiệu ứng React/Canvas. Đổi sáu vũ khí, nam/nữ, bốn tư thế, bốn màu, ánh sáng vũ khí, vòng ngọc, tinh quang, độ sáng, đổi hướng và so với bản gốc. Đây là **mẫu thẩm mỹ chờ duyệt, chưa cài vào game**; các mốc chọn trong phòng thử không thay đổi điều kiện/chỉ số game. Tài nguyên được chép bởi `scripts/sync_aura.py` (cũng được gọi trong `sync:assets`); nguồn ở `design_export/gear-aura-demo-20261113/`.
+
 Đã build bằng Node 24.14.0, kiểm tìm kiếm không dấu/GIF, phím chọn phái, phân trang, đóng cửa sổ bằng Esc, đổi phái/quái/bậc ảnh và tua skill. Giao diện 390px không tràn ngang, không thấy lỗi console. Toàn bộ đường dẫn ảnh đã được kiểm tồn tại; dữ liệu không có atlas vệt sóng/móng vuốt đã bỏ.
 
 ## Chạy từ gốc repo

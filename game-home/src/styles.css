@@ -1305,3 +1305,237 @@ body:has(dialog[open]) {
     animation: none !important;
   }
 }
+
+.aura-section {
+  padding: 80px 0;
+  background: #eaf0e5;
+  border-bottom: 1px solid var(--line);
+}
+.aura-status {
+  color: #617655;
+  border: 1px solid #b5c4a9;
+  padding: 6px 11px;
+  font-size: 9px;
+  white-space: nowrap;
+}
+.aura-feature {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+.aura-preview {
+  padding: 0;
+  background: #142b2c;
+  color: #deefd9;
+  border: 1px solid #6f9680;
+  text-align: left;
+  overflow: hidden;
+}
+.aura-preview picture {
+  display: block;
+}
+.aura-preview img {
+  width: 100%;
+  height: auto;
+}
+.aura-preview-caption {
+  padding: 14px 18px;
+  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #38564d;
+}
+.aura-intro > p:first-child {
+  font-size: 12px;
+  line-height: 2;
+  color: #5f7356;
+}
+.aura-presets {
+  display: grid;
+  gap: 8px;
+  margin: 22px 0;
+}
+.aura-presets > button {
+  display: grid;
+  grid-template-columns: 25px 1fr 15px;
+  gap: 12px;
+  align-items: center;
+  text-align: left;
+  background: #f5f6ed;
+  border: 1px solid #cdd8c1;
+  padding: 13px 15px;
+  color: var(--ink);
+}
+.aura-presets > button:hover {
+  border-color: var(--gold);
+}
+.aura-preset-number {
+  font: 16px var(--serif);
+  color: var(--gold);
+}
+.aura-presets strong {
+  font: 17px var(--serif);
+  display: block;
+}
+.aura-presets small {
+  font-size: 9px;
+  line-height: 1.8;
+  display: block;
+  color: #78886d;
+  margin-top: 4px;
+}
+.aura-footnote {
+  font-size: 9px;
+  color: #7a886e;
+  margin-top: 16px;
+  line-height: 1.9;
+}
+.aura-demo {
+  padding: 28px;
+}
+.aura-demo h2 {
+  font-size: 30px;
+  padding-right: 35px;
+}
+.aura-preset-bar {
+  display: flex;
+  gap: 8px;
+  margin: 20px 0;
+}
+.aura-preset-bar button {
+  flex: 1;
+  background: transparent;
+  border: 1px solid #c2cfb7;
+  padding: 10px;
+  color: var(--ink);
+  font-size: 12px;
+}
+.aura-preset-bar small {
+  display: block;
+  font-size: 9px;
+  opacity: 0.7;
+}
+.aura-demo button[aria-pressed="true"] {
+  color: #fcf6e6;
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.aura-workbench {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(240px, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+.aura-scene {
+  background: #142b2c;
+  color: #e6f2db;
+  border: 1px solid #496b60;
+  min-width: 0;
+}
+.aura-scene-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 15px;
+  font-size: 11px;
+  align-items: center;
+}
+.aura-badge {
+  font-size: 8px;
+  color: #c7dab9;
+  padding: 3px 7px;
+  border: 1px solid #496b60;
+}
+.aura-scene canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+}
+.aura-scene-summary {
+  font-size: 9px;
+  padding: 13px 15px;
+  border-top: 1px solid #38564d;
+  color: #b5c6a9;
+}
+.aura-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.aura-settings label {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  gap: 6px;
+  margin-bottom: 11px;
+}
+.aura-settings select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #becab4;
+  background: var(--paper);
+  padding: 8px;
+  color: var(--ink);
+  font: inherit;
+}
+.aura-poses,
+.aura-colors,
+.aura-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 13px 0;
+}
+.aura-settings button {
+  border: 1px solid #becab4;
+  background: transparent;
+  color: var(--ink);
+  padding: 6px 9px;
+  font-size: 10px;
+}
+.aura-colors button {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+.aura-colors i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px currentColor;
+}
+.aura-settings input[type="range"] {
+  width: 100%;
+  accent-color: var(--ink);
+}
+@media (max-width: 760px) {
+  .aura-feature {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .aura-section {
+    padding: 45px 0;
+  }
+  .aura-status {
+    display: inline-block;
+    margin-top: 16px;
+    white-space: normal;
+  }
+  .aura-workbench {
+    grid-template-columns: 1fr;
+  }
+  .aura-demo {
+    padding: 17px;
+  }
+  .aura-demo h2 {
+    font-size: 25px;
+  }
+  .aura-preset-bar button {
+    padding: 8px 4px;
+    font-size: 11px;
+  }
+}

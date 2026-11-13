@@ -1,0 +1,11 @@
+{
+  "note": "Offline preview. Existing rig geometry and textures; proposed procedural VFX, not gameplay recording. No runtime files modified.",
+  "actorFrames": 252,
+  "weaponMasks": 252,
+  "sourceHashes": {
+    "tools\\client_pc\\decompiled\\PcLockedCharacterRig.cs": "8a5425590666a2f828c49dfe2ce4d11b883b63f77fd57876bde428ecebfeac9a",
+    "tools\\client_pc\\decompiled\\PcCharacterAnimationClock.cs": "e944573edd23addbe11327d3fecd6de8856d0e6f136b24a75bfb48d01a679514",
+    "tools\\client_pc\\decompiled\\PcStarterSkillAnimation.cs": "1f95c6d4a966e6af65950ed1c940724412108c52b14d7c26687b12ca6cfe1b6a",
+    "Client_PC\\pb189\\NinjaSchool_189_Data\\StreamingAssets\\hd\\char\\locked_rig_v1\\weapon_motion.txt": "0b8664aaf856406ecb468d3fa8056189e99a93256b685ea27a0aa19ed0ed52aa"
+  }
+}
